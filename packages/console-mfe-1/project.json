@@ -1,0 +1,43 @@
+{
+  "root": "packages/console-mfe-1",
+  "sourceRoot": "packages/console-mfe-1/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/console-mfe-1",
+        "tsConfig": "packages/console-mfe-1/tsconfig.lib.json",
+        "project": "packages/console-mfe-1/package.json",
+        "entryFile": "packages/console-mfe-1/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "packages/console-mfe-1/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/console-mfe-1/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/console-mfe-1"],
+      "options": {
+        "jestConfig": "packages/console-mfe-1/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

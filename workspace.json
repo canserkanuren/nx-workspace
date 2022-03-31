@@ -1,4 +1,9 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "console": "apps/console",
+    "console-e2e": "apps/console-e2e",
+    "console-mfe-1": "packages/console-mfe-1",
+    "console-mfe-2": "packages/console-mfe-2"
+  }
 }
