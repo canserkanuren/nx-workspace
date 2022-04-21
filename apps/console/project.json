@@ -67,6 +67,13 @@
         "jestConfig": "apps/console/jest.config.js",
         "passWithNoTests": true
       }
+    },
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/console/**/*.{css,scss}"]
+      }
     }
   },
   "tags": []
