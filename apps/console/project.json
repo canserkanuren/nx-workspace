@@ -72,7 +72,7 @@
       "executor": "nx-stylelint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/console/**/*.{css,scss}"]
+        "lintFilePatterns": ["apps/console/**/*.scss"]
       }
     }
   },

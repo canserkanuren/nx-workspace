@@ -38,6 +38,13 @@
         "jestConfig": "packages/console-mfe-2/jest.config.js",
         "passWithNoTests": true
       }
+    },
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/console-mfe-2/**/*.scss"]
+      }
     }
   }
 }
