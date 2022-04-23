@@ -1,0 +1,52 @@
+{
+  "root": "packages/<%= normalizedTitle %>",
+  "sourceRoot": "packages/<%= normalizedTitle %>/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/<%= normalizedTitle %>",
+        "tsConfig": "packages/<%= normalizedTitle %>/tsconfig.lib.json",
+        "project": "packages/<%= normalizedTitle %>/package.json",
+        "entryFile": "packages/<%= normalizedTitle %>/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "packages/<%= normalizedTitle %>/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/<%= normalizedTitle %>/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/<%= normalizedTitle %>"],
+      "options": {
+        "jestConfig": "packages/<%= normalizedTitle %>/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/<%= normalizedTitle %>/**/*.scss"]
+      }
+    }
+  }
+}

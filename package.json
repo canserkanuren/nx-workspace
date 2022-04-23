@@ -4,11 +4,12 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
-    "lint": "nx lint",
+    "lint": "nx run-many --target=lint --all --parallel 5",
     "lint:styles": "nx affected:nx-stylelint:lint",
     "build": "nx build",
-    "test": "nx test",
-    "prepare": "husky install"
+    "test": "nx run-many --target=test --all --parallel 5",
+    "prepare": "husky install",
+    "publish": "echo \"testoo\""
   },
   "private": true,
   "dependencies": {
@@ -27,6 +28,7 @@
     "@commitlint/config-conventional": "^16.2.1",
     "@nrwl/cli": "13.10.3",
     "@nrwl/cypress": "13.10.3",
+    "@nrwl/devkit": "13.10.3",
     "@nrwl/eslint-plugin-nx": "13.10.3",
     "@nrwl/jest": "13.10.3",
     "@nrwl/linter": "13.10.3",

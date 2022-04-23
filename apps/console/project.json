@@ -15,7 +15,11 @@
         "main": "apps/console/src/main.tsx",
         "polyfills": "apps/console/src/polyfills.ts",
         "tsConfig": "apps/console/tsconfig.app.json",
-        "assets": ["apps/console/src/favicon.ico", "apps/console/src/assets"],
+        "assets": [
+          "apps/console/src/favicon.ico",
+          "apps/console/src/assets",
+          "apps/console/src/public"
+        ],
         "styles": [
           "apps/console/src/styles.scss",
           "node_modules/bootstrap/dist/css/bootstrap.min.css"

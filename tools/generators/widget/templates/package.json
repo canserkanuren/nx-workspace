@@ -1,0 +1,4 @@
+{
+  "name": "@dsp-automation/<%= normalizedTitle %>",
+  "version": "0.0.1"
+}
